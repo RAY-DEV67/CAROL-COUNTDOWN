@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap" rel="stylesheet">
+
+    <title>FGC CAROL COUNTDOWN TIMER</title>
+<link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="text-white">
+   <main class="flex flex-col items-center justify-center">
+    <h1 class="text-2xl uppercase">COUNTDOWN TO</h1>
+    <h1 class="mb-12 text-2xl uppercase">FGC ISASHI CAROL SERVICE</h1>
+
+    <div class="w-full flex flex-col items-center justify-center">
+      <div class="flex">
+        <div class=" text-center">
+          <div class=" w-full h-12 flip"></div>
+          <p class="days text-4xl mb-12 countdown -mt-14 p-8"></p>
+          <div class=" w-full h-12 flip -mt-24"></div>
+          <p class="label uppercase">days</p>
+        </div>
+    
+        <div class=" text-center ml-4">
+          <div class=" w-full h-12 flip"></div>
+          <p class="Hours text-4xl mb-12 countdown -mt-14 p-8"></p>
+          <div class=" w-full h-12 flip -mt-24"></div>
+          <p class="label uppercase">Hours</p>
+        </div>
+    
+        <div class=" text-center mx-4">
+          <div class=" w-full h-12 flip"></div>
+          <p class="Minutes text-4xl mb-12 countdown -mt-14 p-8"></p>
+          <div class=" w-full h-12 flip -mt-24"></div>
+          <p class="label uppercase">Minutes</p>
+        </div>
+    
+        <div class=" text-center">
+          <div class=" w-full h-12 flip"></div>
+          <p class="seconds text-4xl mb-12 countdown -mt-14 p-8"></p>
+          <div class=" w-full h-12 flip -mt-24"></div>
+          <p class="label uppercase">Seconds</p>
+        </div>
+      </div>
+    </div>
+   </main>
+
+<footer>
+<div class="flex justify-center items-center h-full">
+  <img src="images/icon-facebook.svg" alt="facebook">
+  <img class="mx-4" src="images/icon-pinterest.svg" alt="pinterest">
+  <img src="images/icon-instagram.svg" alt="instagram">
+</div>
+</footer>
+
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("dec 18, 2022 15:00:00").getTime();
+
+      console.log(countDownDate);
+
+      // Update the count down every 1 second
+      var x = setInterval(function () {
+        // Get today's date and time
+        var now = new Date().getTime();
+        // console.log(now);
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // console.log(distance);
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        // console.log(days);
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.querySelector(".days").textContent = days
+        document.querySelector(".Hours").textContent = hours
+        document.querySelector(".Minutes").textContent = minutes
+        document.querySelector(".seconds").textContent = seconds
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+body{
+    background-image: linear-gradient(hsl(234, 17%, 12%), hsl(235, 16%, 14%),hsl(236, 21%, 26%));
+    font-family: 'Red Hat Text', sans-serif;
+}
+main{
+    height: 80vh;
+    background-image: url(images/bg-stars.svg);
+}
+footer{
+    background-image: url(images/pattern-hills.svg);
+    height: 20vh;
+    /* background-color: hsl(236, 21%, 26%); */
+}
+.countdown{
+    color: hsl(345, 95%, 68%);
+    position: relative;
+    z-index: 646;
+}
+.label{
+    color: hsl(237, 18%, 59%);
+    transform: rotateX(0deg);
+	transform-origin: bottom;
+}
+.flip{
+    border-radius: 8px;
+    background-color: hsl(236, 21%, 26%);
+}
+
